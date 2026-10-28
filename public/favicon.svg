@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient: Atelier Dark Obsidian -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#24211D"/>
+      <stop offset="45%" stop-color="#141312"/>
+      <stop offset="100%" stop-color="#0A0908"/>
+    </linearGradient>
+
+    <!-- Outer Frame: Extruded Champagne Gold -->
+    <linearGradient id="frameGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCECD7"/>
+      <stop offset="35%" stop-color="#C9A982"/>
+      <stop offset="70%" stop-color="#9A754E"/>
+      <stop offset="100%" stop-color="#5A4027"/>
+    </linearGradient>
+
+    <!-- Metallic Gold Facet - Specular Front -->
+    <linearGradient id="goldBright" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF5E8"/>
+      <stop offset="40%" stop-color="#DEBE97"/>
+      <stop offset="100%" stop-color="#B88E5E"/>
+    </linearGradient>
+
+    <!-- Metallic Gold Facet - Shadow / Depth Plane -->
+    <linearGradient id="goldShadow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8F6A40"/>
+      <stop offset="100%" stop-color="#5E4122"/>
+    </linearGradient>
+
+    <!-- Subtle Drop Shadow for depth inside tab -->
+    <filter id="markShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2.5" stdDeviation="3" flood-color="#000000" flood-opacity="0.8"/>
+    </filter>
+  </defs>
+
+  <!-- Squircle Base Frame -->
+  <rect x="5" y="5" width="118" height="118" rx="28" fill="url(#bgGrad)" stroke="url(#frameGrad)" stroke-width="3"/>
+  <rect x="11" y="11" width="106" height="106" rx="22" fill="none" stroke="#C9A982" stroke-opacity="0.18" stroke-width="1.2"/>
+
+  <!-- Logo Mark: Architectural Folding "F" -->
+  <g filter="url(#markShadow)">
+    <!-- 1. Vertical Spine (Structural Column) -->
+    <path d="M 33 27 L 46 27 L 46 101 L 33 101 Z" fill="url(#goldBright)"/>
+    <path d="M 33 27 L 30 30 L 30 98 L 33 101 Z" fill="url(#goldShadow)"/>
+    <line x1="36.5" y1="30" x2="36.5" y2="98" stroke="#FFFFFF" stroke-opacity="0.9" stroke-width="1.4" stroke-linecap="round"/>
+
+    <!-- 2. Top Fold Arm (Accordion Bi-fold Panels) -->
+    <polygon points="46,27 71,36 71,51 46,42" fill="url(#goldShadow)"/>
+    <polygon points="71,36 98,27 98,42 71,51" fill="url(#goldBright)"/>
+    <line x1="46" y1="27" x2="71" y2="36" stroke="#FFFFFF" stroke-opacity="0.9" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="71" y1="36" x2="98" y2="27" stroke="#FFFFFF" stroke-opacity="0.9" stroke-width="1.5" stroke-linecap="round"/>
+
+    <!-- 3. Middle Fold Arm (Accordion Bi-fold Panels) -->
+    <polygon points="46,59 66,66 66,78 46,71" fill="url(#goldShadow)"/>
+    <polygon points="66,66 87,59 87,71 66,78" fill="url(#goldBright)"/>
+    <line x1="46" y1="59" x2="66" y2="66" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.4" stroke-linecap="round"/>
+    <line x1="66" y1="66" x2="87" y2="59" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.4" stroke-linecap="round"/>
+
+    <!-- Precision Hinge Pivots -->
+    <circle cx="71" cy="43.5" r="2.2" fill="#141312" stroke="#FFF2E2" stroke-width="1"/>
+    <circle cx="66" cy="72" r="1.8" fill="#141312" stroke="#FFF2E2" stroke-width="0.9"/>
+  </g>
+</svg>

@@ -45,8 +45,31 @@ import { CommonModule } from '@angular/common';
         <a href="#hero" class="flex items-center gap-3.5 group">
           <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-[#C9A982] via-[#A88865] to-[#151413] p-0.5 shadow-lg group-hover:scale-105 transition-transform duration-300">
             <div class="w-full h-full bg-[#151413] rounded-[10px] flex items-center justify-center">
-              <svg class="w-5 h-5 text-[#C9A982]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+              <svg class="w-6 h-6" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="brandGoldBright" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#FFF5E8"/>
+                    <stop offset="40%" stop-color="#DEBE97"/>
+                    <stop offset="100%" stop-color="#B88E5E"/>
+                  </linearGradient>
+                  <linearGradient id="brandGoldShadow" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#8F6A40"/>
+                    <stop offset="100%" stop-color="#5E4122"/>
+                  </linearGradient>
+                </defs>
+                <path d="M 33 27 L 46 27 L 46 101 L 33 101 Z" fill="url(#brandGoldBright)"/>
+                <path d="M 33 27 L 30 30 L 30 98 L 33 101 Z" fill="url(#brandGoldShadow)"/>
+                <line x1="36.5" y1="30" x2="36.5" y2="98" stroke="#FFFFFF" stroke-opacity="0.9" stroke-width="2" stroke-linecap="round"/>
+                <polygon points="46,27 71,36 71,51 46,42" fill="url(#brandGoldShadow)"/>
+                <polygon points="71,36 98,27 98,42 71,51" fill="url(#brandGoldBright)"/>
+                <line x1="46" y1="27" x2="71" y2="36" stroke="#FFFFFF" stroke-opacity="0.9" stroke-width="2.2" stroke-linecap="round"/>
+                <line x1="71" y1="36" x2="98" y2="27" stroke="#FFFFFF" stroke-opacity="0.9" stroke-width="2.2" stroke-linecap="round"/>
+                <polygon points="46,59 66,66 66,78 46,71" fill="url(#brandGoldShadow)"/>
+                <polygon points="66,66 87,59 87,71 66,78" fill="url(#brandGoldBright)"/>
+                <line x1="46" y1="59" x2="66" y2="66" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="2" stroke-linecap="round"/>
+                <line x1="66" y1="66" x2="87" y2="59" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="71" cy="43.5" r="2.8" fill="#141312" stroke="#FFF2E2" stroke-width="1.2"/>
+                <circle cx="66" cy="72" r="2.4" fill="#141312" stroke="#FFF2E2" stroke-width="1"/>
               </svg>
             </div>
           </div>

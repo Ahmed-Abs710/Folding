@@ -1,0 +1,19 @@
+{
+  "name": "فولدينج للألومنيوم المعماري",
+  "short_name": "فولدينج",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "theme_color": "#151413",
+  "background_color": "#151413",
+  "display": "standalone"
+}
