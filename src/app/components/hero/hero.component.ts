@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
   template: `
     <!-- Pinned Scroll Track: Extended to 480vh for a luxurious, deep Angular-style scroll journey -->
-    <section id="hero-track" class="relative h-[250vh] sm:h-[350vh] lg:h-[480vh] bg-[#151413]">
+    <section id="hero-track" class="relative h-[480vh] bg-[#151413]">
       
       <!-- Sticky Fullscreen Viewport: Calibrated to fit 100% inside any screen without bottom clipping -->
       <div class="sticky top-0 h-screen w-full overflow-hidden flex flex-col justify-between atelier-bg select-none py-2 sm:py-4">
@@ -101,12 +101,12 @@ import { CommonModule } from '@angular/common';
 
           <!-- 3D Transform Stage Container -->
           <div 
-            class="relative w-full max-w-5xl h-[270px] sm:h-[350px] lg:h-[370px] flex items-center justify-center"
+            class="relative w-full max-w-5xl h-[310px] sm:h-[350px] lg:h-[370px] flex items-center justify-center"
             style="perspective: 1200px; transform-style: preserve-3d;">
 
             <!-- CARD 1: Left Card (Panoramic Bi-Fold Systems) -->
             <div 
-              class="absolute w-36 sm:w-56 lg:w-64 h-[240px] sm:h-[330px] lg:h-[350px] rounded-2xl overflow-hidden transition-all duration-300 ease-out z-10 border border-white/15 group cursor-pointer"
+              class="absolute w-44 sm:w-56 lg:w-64 h-[280px] sm:h-[330px] lg:h-[350px] rounded-2xl overflow-hidden transition-all duration-300 ease-out z-10 border border-white/15 group cursor-pointer"
               [style.transform]="leftCardTransform()"
               [style.boxShadow]="leftCardShadow()"
               (click)="scrollToTarget('windows')">
@@ -140,7 +140,7 @@ import { CommonModule } from '@angular/common';
 
             <!-- CARD 2: Center Dominant Card (Obsidian Italian Luxury Kitchen) -->
             <div 
-              class="relative w-40 sm:w-60 lg:w-72 h-[260px] sm:h-[350px] lg:h-[370px] rounded-2xl overflow-hidden transition-all duration-300 ease-out z-20 border border-[#C9A982]/60 group cursor-pointer"
+              class="relative w-48 sm:w-60 lg:w-72 h-[300px] sm:h-[350px] lg:h-[370px] rounded-2xl overflow-hidden transition-all duration-300 ease-out z-20 border border-[#C9A982]/60 group cursor-pointer"
               [style.transform]="centerCardTransform()"
               [style.boxShadow]="centerCardShadow()"
               (click)="scrollToTarget('kitchens')">
@@ -342,17 +342,14 @@ export class HeroComponent {
   // Left Card: 3D Leftward Fan-out with true perspective depth
   leftCardTransform = computed(() => {
     const p = this.smoothProgress();
-    const w = this.windowWidth();
-    const isMobile = w < 640;
-    const isTablet = w >= 640 && w < 1024;
-
-    const maxOffset = isMobile ? Math.min(95, w * 0.24) : (isTablet ? 190 : 340);
+    const isMobile = this.windowWidth() < 640;
+    const maxOffset = isMobile ? 160 : 350;
     const xOffset = -p * maxOffset;
-    const yOffset = p * (isMobile ? 6 : 10);
-    const zOffset = -p * (isMobile ? 25 : 40);
-    const rotY = p * (isMobile ? 12 : 22);
-    const rotZ = -2 - p * (isMobile ? 2.5 : 4);
-    const scale = (isMobile ? 0.90 : 0.94) + p * 0.06;
+    const yOffset = p * 10;
+    const zOffset = -p * 40;
+    const rotY = p * 22;
+    const rotZ = -3 - p * 4;
+    const scale = 0.94 + p * 0.06;
     return `translateX(${xOffset}px) translateY(${yOffset}px) translateZ(${zOffset}px) rotateY(${rotY}deg) rotateZ(${rotZ}deg) scale(${scale})`;
   });
 
@@ -364,17 +361,14 @@ export class HeroComponent {
   // Right Card: 3D Rightward Fan-out with true perspective depth
   rightCardTransform = computed(() => {
     const p = this.smoothProgress();
-    const w = this.windowWidth();
-    const isMobile = w < 640;
-    const isTablet = w >= 640 && w < 1024;
-
-    const maxOffset = isMobile ? Math.min(95, w * 0.24) : (isTablet ? 190 : 340);
+    const isMobile = this.windowWidth() < 640;
+    const maxOffset = isMobile ? 160 : 350;
     const xOffset = p * maxOffset;
-    const yOffset = p * (isMobile ? 6 : 10);
-    const zOffset = -p * (isMobile ? 25 : 40);
-    const rotY = -p * (isMobile ? 12 : 22);
-    const rotZ = 2 + p * (isMobile ? 2.5 : 4);
-    const scale = (isMobile ? 0.90 : 0.94) + p * 0.06;
+    const yOffset = p * 10;
+    const zOffset = -p * 40;
+    const rotY = -p * 22;
+    const rotZ = 3 + p * 4;
+    const scale = 0.94 + p * 0.06;
     return `translateX(${xOffset}px) translateY(${yOffset}px) translateZ(${zOffset}px) rotateY(${rotY}deg) rotateZ(${rotZ}deg) scale(${scale})`;
   });
 
@@ -405,9 +399,12 @@ export class HeroComponent {
   }
 
   scrollToCollections() {
-    const el = document.getElementById('collections');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
+    const track = document.getElementById('hero-track');
+    const target = document.getElementById('collections');
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    } else if (track) {
+      window.scrollTo({ top: track.offsetTop + track.offsetHeight, behavior: 'smooth' });
     }
   }
 }

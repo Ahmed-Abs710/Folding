@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <footer class="border-t border-[#C9A982]/15 bg-[#0D0C0B] pt-14 sm:pt-20 pb-28 sm:pb-12 px-4 sm:px-8 text-white/50 text-xs">
+    <footer class="border-t border-[#C9A982]/15 bg-[#0D0C0B] pt-14 sm:pt-20 pb-12 px-4 sm:px-8 text-white/50 text-xs">
       <div class="max-w-7xl mx-auto space-y-16">
         
         <!-- Main Footer Columns -->
