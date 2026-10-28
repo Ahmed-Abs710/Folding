@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Tajawal:wght@300;400;500;700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Cairo', system-ui, -apple-system, sans-serif;
+    direction: rtl;
+    background-color: #151413;
+    color: #F8F5F1;
+  }
+}
+
+/* Luxury Architectural Atelier Tokens & Classes */
+.font-display {
+  font-family: 'Playfair Display', serif;
+}
+
+.atelier-bg {
+  background-color: #151413;
+}
+
+.atelier-card {
+  background: #1C1A18;
+  border: 1px solid rgba(201, 169, 130, 0.16);
+  transition: all 0.45s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.atelier-card:hover {
+  border-color: rgba(201, 169, 130, 0.45);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5), 0 0 30px rgba(201, 169, 130, 0.15);
+  transform: translateY(-5px);
+}
+
+.nav-atelier {
+  background: rgba(21, 20, 19, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(201, 169, 130, 0.12);
+}
+
+/* Champagne Gold Text & Buttons */
+.champagne-gradient-text {
+  background: linear-gradient(135deg, #F8F5F1 0%, #C9A982 50%, #9E7E5A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.champagne-btn {
+  background: linear-gradient(135deg, #C9A982 0%, #A88865 100%);
+  color: #151413;
+  font-weight: 700;
+  box-shadow: 0 4px 20px rgba(201, 169, 130, 0.28);
+  transition: all 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.champagne-btn:hover {
+  box-shadow: 0 8px 30px rgba(201, 169, 130, 0.45);
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #DFCCA4 0%, #B89670 100%);
+}
+
+.champagne-badge {
+  background: rgba(201, 169, 130, 0.1);
+  border: 1px solid rgba(201, 169, 130, 0.28);
+  color: #E2CEB9;
+}
+
+/* Staggered Rhythm */
+@media (min-width: 768px) {
+  .staggered-grid > div:nth-child(even) {
+    margin-top: 65px;
+  }
+}
+
+/* Circular Precision Arrow Button on Cards */
+.card-arrow-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #F8F5F1;
+  color: #151413;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  transition: all 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.card-arrow-btn svg {
+  transition: transform 0.35s ease, color 0.35s ease;
+}
+
+.group:hover .card-arrow-btn {
+  background: #151413;
+  color: #C9A982;
+  border: 1px solid rgba(201, 169, 130, 0.4);
+  transform: scale(1.08);
+}
+
+.group:hover .card-arrow-btn svg {
+  transform: translate(2px, -2px);
+}
+
+/* Subtle Architectural Eyebrow Lines */
+.eyebrow-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  letter-spacing: 0.18em;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #C9A982;
+  font-weight: 600;
+}
+
+.eyebrow-line {
+  width: 32px;
+  height: 1px;
+  background: #C9A982;
+  opacity: 0.6;
+}
+
+/* Translucent Large Watermark Numbers */
+.watermark-number {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: clamp(90px, 12vw, 170px);
+  line-height: 1;
+  color: rgba(201, 169, 130, 0.05);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Scroll Animation Elements */
+.scroll-indicator-pulse {
+  animation: scrollPulse 2.2s infinite ease-in-out;
+}
+
+@keyframes scrollPulse {
+  0% {
+    transform: translateY(0);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateY(8px);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0.9;
+  }
+}
+
+.fan-card-transition {
+  transition: transform 0.25s cubic-bezier(0.1, 0.8, 0.2, 1), box-shadow 0.35s ease;
+  will-change: transform;
+}
