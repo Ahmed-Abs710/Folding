@@ -11,7 +11,31 @@
     direction: rtl;
     background-color: #151413;
     color: #F8F5F1;
+    overflow-x: hidden;
+    width: 100%;
   }
+
+  body {
+    overflow-x: hidden;
+    width: 100%;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Prevent iOS Safari auto-zoom on input focus */
+  @media (max-width: 639px) {
+    input, select, textarea {
+      font-size: 16px !important;
+    }
+  }
+}
+
+/* Hide scrollbar for mobile horizontal swipe strips */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 /* Luxury Architectural Atelier Tokens & Classes */

@@ -15,24 +15,24 @@ import { CommonModule } from '@angular/common';
     </div>
 
     <!-- Top Micro Bar -->
-    <header class="border-b border-[#C9A982]/15 bg-[#100F0E] text-xs text-[#C9A982]/80 py-2.5 px-4 sm:px-8">
-      <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-3">
-        <div class="flex items-center gap-6">
-          <a href="tel:+201000000000" class="flex items-center gap-2 hover:text-[#F8F5F1] transition">
-            <span class="w-1.5 h-1.5 rounded-full bg-[#C9A982]"></span>
-            <span dir="ltr" class="font-medium">+20 100 000 0000</span>
-            <span class="text-white/20">|</span>
-            <span class="text-white/60">استشارات المعمار والمقايسات الفنية</span>
+    <header class="border-b border-[#C9A982]/15 bg-[#100F0E] text-xs text-[#C9A982]/80 py-2 px-3 sm:px-8">
+      <div class="max-w-7xl mx-auto flex justify-between items-center gap-2">
+        <div class="flex items-center gap-4 sm:gap-6">
+          <a href="tel:+201000000000" class="flex items-center gap-1.5 sm:gap-2 hover:text-[#F8F5F1] transition">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#C9A982] animate-pulse"></span>
+            <span dir="ltr" class="font-medium text-[11px] sm:text-xs">+20 100 000 0000</span>
+            <span class="text-white/20 hidden sm:inline">|</span>
+            <span class="text-white/60 hidden sm:inline">استشارات المعمار الفنية</span>
           </a>
-          <span class="hidden md:flex items-center gap-2 text-white/50">
-            المصنع الهندسي والمعرض الرئيسي - تنفيذ المشاريع السكنية والفلل
+          <span class="hidden md:flex items-center gap-2 text-white/50 text-[11px]">
+            المصنع والمعرض الرئيسي - تنفيذ المشاريع والفلل
           </span>
         </div>
-        <div class="flex items-center gap-4">
-          <span class="champagne-badge px-3 py-0.5 rounded-full text-[11px] font-medium tracking-wide">
+        <div class="flex items-center gap-2 sm:gap-4">
+          <span class="champagne-badge px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] font-medium tracking-wide">
             ضمان كتابي 10 سنوات
           </span>
-          <span class="hidden sm:inline text-white/40">ساعات العمل: 9:00 ص - 10:00 م</span>
+          <span class="hidden sm:inline text-white/40 text-[11px]">9:00 ص - 10:00 م</span>
         </div>
       </div>
     </header>
@@ -74,10 +74,10 @@ import { CommonModule } from '@angular/common';
             </div>
           </div>
           <div>
-            <span class="text-xl font-bold tracking-tight text-[#F8F5F1] block leading-none">
+            <span class="text-base sm:text-xl font-bold tracking-tight text-[#F8F5F1] block leading-none">
               فولدينج <span class="text-[#C9A982] font-normal">للألومنيوم</span>
             </span>
-            <span class="text-[9.5px] text-white/40 tracking-[0.25em] font-medium uppercase block mt-1">
+            <span class="text-[8px] sm:text-[9.5px] text-white/40 tracking-[0.2em] sm:tracking-[0.25em] font-medium uppercase block mt-0.5 sm:mt-1">
               Architectural Systems
             </span>
           </div>
@@ -118,20 +118,49 @@ import { CommonModule } from '@angular/common';
 
       <!-- Mobile Dropdown -->
       @if (isMobileMenuOpen()) {
-        <div class="lg:hidden bg-[#151413]/98 border-b border-[#C9A982]/20 px-6 py-6 space-y-4 backdrop-blur-2xl animate-in fade-in slide-in-from-top-4 duration-300">
-          <div class="flex flex-col gap-3 text-sm font-medium">
-            <a (click)="closeMobileMenu()" href="#hero" class="text-[#C9A982] py-2 border-b border-white/5">الرئيسية</a>
-            <a (click)="closeMobileMenu()" href="#collections" class="text-white/80 hover:text-[#C9A982] py-2 border-b border-white/5">المجموعات المعمارية</a>
-            <a (click)="closeMobileMenu()" href="#kitchens" class="text-white/80 hover:text-[#C9A982] py-2 border-b border-white/5">مطابخ الأوبسيديان والكلادينج</a>
-            <a (click)="closeMobileMenu()" href="#windows" class="text-white/80 hover:text-[#C9A982] py-2 border-b border-white/5">أنظمة الفولدينج والبانوراما</a>
-            <a (click)="closeMobileMenu()" href="#facades" class="text-white/80 hover:text-[#C9A982] py-2 border-b border-white/5">الواجهات والكلادينج A2</a>
-            <a (click)="closeMobileMenu()" href="#gallery" class="text-white/80 hover:text-[#C9A982] py-2 border-b border-white/5">المعرض وسجل الأعمال</a>
-            <a (click)="closeMobileMenu()" href="#calculator" class="text-white/80 hover:text-[#C9A982] py-2 border-b border-white/5">حاسبة التكلفة الفورية</a>
-            <a (click)="closeMobileMenu()" href="#contact" class="text-white/80 hover:text-[#C9A982] py-2">طلب معاينة ورفع مقاسات</a>
+        <div class="lg:hidden bg-[#151413]/98 border-b border-[#C9A982]/20 px-4 py-5 space-y-4 backdrop-blur-2xl max-h-[82vh] overflow-y-auto animate-in fade-in slide-in-from-top-4 duration-300">
+          <div class="flex flex-col gap-1 text-sm font-medium">
+            <a (click)="closeMobileMenu()" href="#hero" class="text-[#C9A982] py-2.5 px-3 rounded-lg hover:bg-white/5 transition flex items-center justify-between">
+              <span>الرئيسية</span>
+              <span class="text-xs opacity-50">←</span>
+            </a>
+            <a (click)="closeMobileMenu()" href="#collections" class="text-white/85 hover:text-[#C9A982] py-2.5 px-3 rounded-lg hover:bg-white/5 transition flex items-center justify-between">
+              <span>المجموعات المعمارية</span>
+              <span class="text-xs opacity-50">←</span>
+            </a>
+            <a (click)="closeMobileMenu()" href="#kitchens" class="text-white/85 hover:text-[#C9A982] py-2.5 px-3 rounded-lg hover:bg-white/5 transition flex items-center justify-between">
+              <span>مطابخ الأوبسيديان والكلادينج</span>
+              <span class="text-xs opacity-50">←</span>
+            </a>
+            <a (click)="closeMobileMenu()" href="#windows" class="text-white/85 hover:text-[#C9A982] py-2.5 px-3 rounded-lg hover:bg-white/5 transition flex items-center justify-between">
+              <span>أنظمة الفولدينج والبانوراما</span>
+              <span class="text-xs opacity-50">←</span>
+            </a>
+            <a (click)="closeMobileMenu()" href="#facades" class="text-white/85 hover:text-[#C9A982] py-2.5 px-3 rounded-lg hover:bg-white/5 transition flex items-center justify-between">
+              <span>الواجهات والكلادينج A2</span>
+              <span class="text-xs opacity-50">←</span>
+            </a>
+            <a (click)="closeMobileMenu()" href="#gallery" class="text-white/85 hover:text-[#C9A982] py-2.5 px-3 rounded-lg hover:bg-white/5 transition flex items-center justify-between">
+              <span>المعرض وسجل الأعمال</span>
+              <span class="text-xs opacity-50">←</span>
+            </a>
+            <a (click)="closeMobileMenu()" href="#calculator" class="text-white/85 hover:text-[#C9A982] py-2.5 px-3 rounded-lg hover:bg-white/5 transition flex items-center justify-between">
+              <span>حاسبة التكلفة الفورية</span>
+              <span class="text-xs opacity-50">←</span>
+            </a>
+            <a (click)="closeMobileMenu()" href="#specs" class="text-white/85 hover:text-[#C9A982] py-2.5 px-3 rounded-lg hover:bg-white/5 transition flex items-center justify-between">
+              <span>المواصفات الفنية وضمان 10 سنوات</span>
+              <span class="text-xs opacity-50">←</span>
+            </a>
           </div>
-          <div class="pt-2">
-            <a (click)="closeMobileMenu()" href="#contact" class="w-full champagne-btn text-xs py-3 rounded-xl flex items-center justify-center gap-2">
-              طلب استشارة وتصميم 3D
+          <div class="pt-2 border-t border-white/10 flex flex-col gap-2">
+            <a (click)="closeMobileMenu()" href="#contact" class="w-full champagne-btn text-xs py-3 rounded-xl flex items-center justify-center gap-2 shadow-lg">
+              <span>طلب استشارة وتصميم 3D</span>
+              <span>↗</span>
+            </a>
+            <a href="https://wa.me/201000000000" target="_blank" class="w-full py-2.5 rounded-xl border border-[#C9A982]/30 bg-white/5 text-xs text-white flex items-center justify-center gap-2">
+              <span>محادثة واتساب مباشرة</span>
+              <span>💬</span>
             </a>
           </div>
         </div>

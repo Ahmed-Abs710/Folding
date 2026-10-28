@@ -7,10 +7,10 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
   template: `
     <!-- Pinned Scroll Track: Extended to 480vh for a luxurious, deep Angular-style scroll journey -->
-    <section id="hero-track" class="relative h-[480vh] bg-[#151413]">
+    <section id="hero-track" class="relative h-[250vh] sm:h-[350vh] lg:h-[480vh] bg-[#151413]">
       
       <!-- Sticky Fullscreen Viewport: Calibrated to fit 100% inside any screen without bottom clipping -->
-      <div class="sticky top-0 h-screen w-full overflow-hidden flex flex-col justify-between atelier-bg select-none py-3 sm:py-4">
+      <div class="sticky top-0 h-screen w-full overflow-hidden flex flex-col justify-between atelier-bg select-none py-2 sm:py-4">
         
         <!-- Ambient Background Lighting & CAD Grid -->
         <div class="absolute inset-0 pointer-events-none z-0">
@@ -34,11 +34,11 @@ import { CommonModule } from '@angular/common';
         </div>
 
         <!-- 1. Top HUD Status Bar -->
-        <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-8 w-full flex items-center justify-between border-b border-white/10 pb-2.5">
+        <div class="relative z-20 max-w-7xl mx-auto px-3 sm:px-8 w-full flex items-center justify-between border-b border-white/10 pb-2">
           <!-- Phase Pill -->
           <div class="flex items-center gap-2.5">
             <span class="w-2 h-2 rounded-full bg-[#C9A982] animate-pulse"></span>
-            <span class="text-[11px] sm:text-xs text-[#C9A982] font-semibold tracking-wider font-mono">
+            <span class="text-[9.5px] sm:text-xs text-[#C9A982] font-semibold tracking-wider font-mono truncate max-w-[190px] sm:max-w-none">
               {{ currentPhaseData().title }}
             </span>
           </div>
@@ -72,16 +72,16 @@ import { CommonModule } from '@angular/common';
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 w-full flex-1 flex flex-col justify-center items-center my-auto">
           
           <!-- Dynamic Headline Area (Fixed Height to eliminate jumpiness and overlap) -->
-          <div class="text-center max-w-3xl mx-auto mb-3 sm:mb-4 h-[75px] sm:h-[85px] flex flex-col justify-center">
+          <div class="text-center max-w-3xl mx-auto mb-2 sm:mb-4 min-h-[68px] sm:h-[85px] flex flex-col justify-center">
             <div class="eyebrow-container mb-1.5 justify-center">
               <span class="eyebrow-line"></span>
               <span class="text-[10px] sm:text-xs tracking-widest">{{ currentPhaseData().eyebrow }}</span>
               <span class="eyebrow-line"></span>
             </div>
 
-            <h1 class="text-xl sm:text-3xl lg:text-4xl font-extrabold text-[#F8F5F1] leading-tight tracking-tight">
+            <h1 class="text-lg sm:text-3xl lg:text-4xl font-extrabold text-[#F8F5F1] leading-snug tracking-tight">
               <span>{{ currentPhaseData().mainText }}</span>
-              <span class="italic font-display text-[#C9A982] block text-base sm:text-xl lg:text-2xl mt-0.5">
+              <span class="italic font-display text-[#C9A982] block text-sm sm:text-xl lg:text-2xl mt-0.5 font-normal">
                 {{ currentPhaseData().subText }}
               </span>
             </h1>
@@ -89,24 +89,24 @@ import { CommonModule } from '@angular/common';
 
           <!-- Laser Architectural Dimension Bar (Safe spacing, no overlap) -->
           <div 
-            class="w-full max-w-3xl flex items-center justify-between text-[9px] sm:text-[10px] text-[#C9A982] font-mono border-t border-dashed border-[#C9A982]/35 pt-1 mb-2 transition-all duration-300 z-30"
+            class="w-full max-w-3xl flex items-center justify-between text-[8px] sm:text-[10px] text-[#C9A982] font-mono border-t border-dashed border-[#C9A982]/35 pt-1 mb-2 transition-all duration-300 z-30"
             [style.opacity]="specTagsOpacity()"
             [style.transform]="'translateY(' + (1 - specTagsOpacity()) * -10 + 'px)'">
             <span>|◄ 0.00m</span>
             <span class="bg-[#151413]/90 backdrop-blur px-3 py-0.5 text-[#E2CEB9] border border-[#C9A982]/30 rounded-full font-bold shadow-lg">
-              انفراج بانورامي كامل للمنظومات المعمارية: 8.50m
+              انفراج بانورامي للمنظومات: 8.50m
             </span>
             <span>►|</span>
           </div>
 
           <!-- 3D Transform Stage Container -->
           <div 
-            class="relative w-full max-w-5xl h-[310px] sm:h-[350px] lg:h-[370px] flex items-center justify-center"
+            class="relative w-full max-w-5xl h-[270px] sm:h-[350px] lg:h-[370px] flex items-center justify-center"
             style="perspective: 1200px; transform-style: preserve-3d;">
 
             <!-- CARD 1: Left Card (Panoramic Bi-Fold Systems) -->
             <div 
-              class="absolute w-44 sm:w-56 lg:w-64 h-[280px] sm:h-[330px] lg:h-[350px] rounded-2xl overflow-hidden transition-all duration-300 ease-out z-10 border border-white/15 group cursor-pointer"
+              class="absolute w-36 sm:w-56 lg:w-64 h-[240px] sm:h-[330px] lg:h-[350px] rounded-2xl overflow-hidden transition-all duration-300 ease-out z-10 border border-white/15 group cursor-pointer"
               [style.transform]="leftCardTransform()"
               [style.boxShadow]="leftCardShadow()"
               (click)="scrollToTarget('windows')">
@@ -140,7 +140,7 @@ import { CommonModule } from '@angular/common';
 
             <!-- CARD 2: Center Dominant Card (Obsidian Italian Luxury Kitchen) -->
             <div 
-              class="relative w-48 sm:w-60 lg:w-72 h-[300px] sm:h-[350px] lg:h-[370px] rounded-2xl overflow-hidden transition-all duration-300 ease-out z-20 border border-[#C9A982]/60 group cursor-pointer"
+              class="relative w-40 sm:w-60 lg:w-72 h-[260px] sm:h-[350px] lg:h-[370px] rounded-2xl overflow-hidden transition-all duration-300 ease-out z-20 border border-[#C9A982]/60 group cursor-pointer"
               [style.transform]="centerCardTransform()"
               [style.boxShadow]="centerCardShadow()"
               (click)="scrollToTarget('kitchens')">
@@ -219,15 +219,15 @@ import { CommonModule } from '@angular/common';
 
           <!-- Bottom Action Buttons in Phase 3 (Guaranteed on-screen visibility) -->
           <div 
-            class="mt-3 sm:mt-4 flex flex-wrap items-center justify-center gap-3 transition-all duration-300 min-h-[42px]"
+            class="mt-2.5 sm:mt-4 flex flex-col sm:flex-row items-center justify-center gap-2.5 w-full max-w-sm sm:max-w-none mx-auto transition-all duration-300 min-h-[42px]"
             [style.opacity]="actionsOpacity()"
             [style.pointer-events]="actionsOpacity() > 0.5 ? 'auto' : 'none'"
             [style.transform]="'translateY(' + (1 - actionsOpacity()) * 12 + 'px)'">
-            <a href="#gallery" class="champagne-btn text-xs sm:text-sm px-6 py-2.5 rounded-xl flex items-center gap-2 shadow-lg">
+            <a href="#gallery" class="w-full sm:w-auto champagne-btn text-xs sm:text-sm px-6 py-2.5 rounded-xl flex items-center justify-center gap-2 shadow-lg">
               <span>تصفح كافة المشاريع وسجل الأعمال</span>
               <span>↓</span>
             </a>
-            <a href="#calculator" class="px-5 py-2.5 rounded-xl border border-[#C9A982]/40 bg-[#1C1A18]/90 hover:bg-[#24211E] text-[#F8F5F1] font-semibold text-xs sm:text-sm transition flex items-center gap-2">
+            <a href="#calculator" class="w-full sm:w-auto px-5 py-2.5 rounded-xl border border-[#C9A982]/40 bg-[#1C1A18]/90 hover:bg-[#24211E] text-[#F8F5F1] font-semibold text-xs sm:text-sm transition flex items-center justify-center gap-2">
               <span>حاسبة التكلفة الفورية</span>
               <span class="text-[#C9A982]">↗</span>
             </a>
@@ -267,6 +267,12 @@ import { CommonModule } from '@angular/common';
 })
 export class HeroComponent {
   scrollProgress = signal<number>(0);
+  windowWidth = signal<number>(typeof window !== 'undefined' ? window.innerWidth : 1200);
+
+  @HostListener('window:resize')
+  onResize() {
+    this.windowWidth.set(window.innerWidth);
+  }
 
   // Smooth smoothed progress signal for organic transitions
   smoothProgress = computed(() => {
@@ -336,13 +342,17 @@ export class HeroComponent {
   // Left Card: 3D Leftward Fan-out with true perspective depth
   leftCardTransform = computed(() => {
     const p = this.smoothProgress();
-    // Wider horizontal travel (from 0 to -350px) to prevent overlapping center card
-    const xOffset = -p * 350;
-    const yOffset = p * 10;
-    const zOffset = -p * 40; // pushes back in 3D space
-    const rotY = p * 22; // 22 deg 3D yaw
-    const rotZ = -3 - p * 4;
-    const scale = 0.94 + p * 0.06;
+    const w = this.windowWidth();
+    const isMobile = w < 640;
+    const isTablet = w >= 640 && w < 1024;
+
+    const maxOffset = isMobile ? Math.min(95, w * 0.24) : (isTablet ? 190 : 340);
+    const xOffset = -p * maxOffset;
+    const yOffset = p * (isMobile ? 6 : 10);
+    const zOffset = -p * (isMobile ? 25 : 40);
+    const rotY = p * (isMobile ? 12 : 22);
+    const rotZ = -2 - p * (isMobile ? 2.5 : 4);
+    const scale = (isMobile ? 0.90 : 0.94) + p * 0.06;
     return `translateX(${xOffset}px) translateY(${yOffset}px) translateZ(${zOffset}px) rotateY(${rotY}deg) rotateZ(${rotZ}deg) scale(${scale})`;
   });
 
@@ -354,13 +364,17 @@ export class HeroComponent {
   // Right Card: 3D Rightward Fan-out with true perspective depth
   rightCardTransform = computed(() => {
     const p = this.smoothProgress();
-    // Wider horizontal travel (from 0 to +350px)
-    const xOffset = p * 350;
-    const yOffset = p * 10;
-    const zOffset = -p * 40; // pushes back in 3D space
-    const rotY = -p * 22; // -22 deg 3D yaw
-    const rotZ = 3 + p * 4;
-    const scale = 0.94 + p * 0.06;
+    const w = this.windowWidth();
+    const isMobile = w < 640;
+    const isTablet = w >= 640 && w < 1024;
+
+    const maxOffset = isMobile ? Math.min(95, w * 0.24) : (isTablet ? 190 : 340);
+    const xOffset = p * maxOffset;
+    const yOffset = p * (isMobile ? 6 : 10);
+    const zOffset = -p * (isMobile ? 25 : 40);
+    const rotY = -p * (isMobile ? 12 : 22);
+    const rotZ = 2 + p * (isMobile ? 2.5 : 4);
+    const scale = (isMobile ? 0.90 : 0.94) + p * 0.06;
     return `translateX(${xOffset}px) translateY(${yOffset}px) translateZ(${zOffset}px) rotateY(${rotY}deg) rotateZ(${rotZ}deg) scale(${scale})`;
   });
 

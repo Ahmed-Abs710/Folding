@@ -30,13 +30,13 @@ import { ProjectItem, ProductCategory } from '../../core/models/project.model';
           </div>
 
           <!-- Minimalist Filter Tabs -->
-          <div class="flex flex-wrap gap-2 p-1.5 rounded-xl bg-[#1C1A18] border border-[#C9A982]/20 self-start md:self-auto">
+          <div class="flex gap-2 p-1.5 rounded-xl bg-[#1C1A18] border border-[#C9A982]/20 overflow-x-auto no-scrollbar max-w-full flex-nowrap md:flex-wrap self-start md:self-auto">
             <button 
               (click)="setFilter('all')" 
               [class.bg-[#C9A982]]="activeCategory() === 'all'" 
               [class.text-[#151413]]="activeCategory() === 'all'"
               [class.text-white/70]="activeCategory() !== 'all'"
-              class="px-4 py-2 rounded-lg text-xs font-bold transition">
+              class="px-3.5 sm:px-4 py-2 rounded-lg text-xs font-bold transition whitespace-nowrap flex-shrink-0">
               كافة الأعمال ({{ allCount() }})
             </button>
             <button 
@@ -44,7 +44,7 @@ import { ProjectItem, ProductCategory } from '../../core/models/project.model';
               [class.bg-[#C9A982]]="activeCategory() === 'kitchen'" 
               [class.text-[#151413]]="activeCategory() === 'kitchen'"
               [class.text-white/70]="activeCategory() !== 'kitchen'"
-              class="px-4 py-2 rounded-lg text-xs font-bold transition">
+              class="px-3.5 sm:px-4 py-2 rounded-lg text-xs font-bold transition whitespace-nowrap flex-shrink-0">
               مطابخ أوبسيديان
             </button>
             <button 
@@ -52,7 +52,7 @@ import { ProjectItem, ProductCategory } from '../../core/models/project.model';
               [class.bg-[#C9A982]]="activeCategory() === 'window'" 
               [class.text-[#151413]]="activeCategory() === 'window'"
               [class.text-white/70]="activeCategory() !== 'window'"
-              class="px-4 py-2 rounded-lg text-xs font-bold transition">
+              class="px-3.5 sm:px-4 py-2 rounded-lg text-xs font-bold transition whitespace-nowrap flex-shrink-0">
               أنظمة الفولدينج والشبابيك
             </button>
             <button 
@@ -60,7 +60,7 @@ import { ProjectItem, ProductCategory } from '../../core/models/project.model';
               [class.bg-[#C9A982]]="activeCategory() === 'facade'" 
               [class.text-[#151413]]="activeCategory() === 'facade'"
               [class.text-white/70]="activeCategory() !== 'facade'"
-              class="px-4 py-2 rounded-lg text-xs font-bold transition">
+              class="px-3.5 sm:px-4 py-2 rounded-lg text-xs font-bold transition whitespace-nowrap flex-shrink-0">
               الواجهات والكلادينج
             </button>
           </div>
@@ -150,7 +150,7 @@ import { ProjectItem, ProductCategory } from '../../core/models/project.model';
           
           <div 
             (click)="$event.stopPropagation()"
-            class="atelier-card max-w-4xl w-full rounded-3xl overflow-hidden border border-[#C9A982]/35 shadow-2xl relative flex flex-col md:flex-row max-h-[90vh]">
+            class="atelier-card max-w-4xl w-full rounded-2xl sm:rounded-3xl overflow-hidden border border-[#C9A982]/35 shadow-2xl relative flex flex-col md:flex-row max-h-[92vh] sm:max-h-[90vh]">
             
             <!-- Close Button -->
             <button 
@@ -162,7 +162,7 @@ import { ProjectItem, ProductCategory } from '../../core/models/project.model';
             </button>
 
             <!-- Lightbox 9:16 Photo Half -->
-            <div class="md:w-1/2 relative bg-black aspect-[9/16] md:aspect-auto">
+            <div class="h-52 sm:h-72 md:h-auto md:w-1/2 relative bg-black flex-shrink-0 aspect-[16/10] sm:aspect-[16/9] md:aspect-auto">
               <img 
                 [src]="selectedProject()!.imageUrl" 
                 [alt]="selectedProject()!.title" 
@@ -176,7 +176,7 @@ import { ProjectItem, ProductCategory } from '../../core/models/project.model';
             </div>
 
             <!-- Lightbox Information Half -->
-            <div class="md:w-1/2 p-6 sm:p-10 flex flex-col justify-between overflow-y-auto space-y-6">
+            <div class="md:w-1/2 p-5 sm:p-8 flex flex-col justify-between overflow-y-auto space-y-5">
               
               <div class="space-y-4">
                 <div class="flex items-center gap-2">

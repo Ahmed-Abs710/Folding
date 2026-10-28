@@ -38,8 +38,8 @@ import { FormsModule } from '@angular/forms';
               </div>
               <div>
                 <div class="text-[11px] text-white/40">المكتب الفني والمبيعات المباشرة</div>
-                <div class="text-sm sm:text-base font-bold text-white group-hover:text-[#C9A982] transition" dir="ltr">
-                  +20 100 000 0000 / +20 120 000 0000
+                <div class="text-xs sm:text-base font-bold text-white group-hover:text-[#C9A982] transition flex flex-wrap gap-x-2" dir="ltr">
+                  <span>+20 100 000 0000</span><span class="text-white/30 hidden sm:inline"> / </span><span>+20 120 000 0000</span>
                 </div>
               </div>
             </a>
@@ -63,7 +63,7 @@ import { FormsModule } from '@angular/forms';
 
         <!-- Right: Form (Col 7-12) -->
         <div class="lg:col-span-6">
-          <div class="atelier-card p-8 sm:p-10 rounded-3xl border border-[#C9A982]/25 shadow-2xl relative">
+          <div class="atelier-card p-5 sm:p-10 rounded-2xl sm:rounded-3xl border border-[#C9A982]/25 shadow-2xl relative">
             <h3 class="text-xl font-bold text-white mb-2">طلب معاينة وتصميم 3D</h3>
             <p class="text-xs text-white/50 mb-6">سجل بياناتك وسيقوم المهندس المختص بالتنسيق معك لزيارة الموقع.</p>
 

@@ -32,7 +32,7 @@ import { ProductCategory } from '../../core/models/project.model';
         @for (col of collections(); track col.id) {
           <div 
             [id]="col.category === 'kitchen' ? 'kitchens' : (col.category === 'window' ? 'windows' : 'facades')"
-            class="atelier-card rounded-3xl p-6 sm:p-10 relative overflow-hidden group">
+            class="atelier-card rounded-2xl sm:rounded-3xl p-5 sm:p-10 relative overflow-hidden group">
             
             <!-- Translucent Watermark Number in Corner -->
             <div class="absolute -top-6 left-6 watermark-number">
@@ -91,7 +91,7 @@ import { ProductCategory } from '../../core/models/project.model';
               <div class="lg:col-span-5 flex justify-center lg:justify-end">
                 <div 
                   (click)="filterAndScroll(col.category)"
-                  class="relative w-full sm:w-80 aspect-[9/16] rounded-2xl overflow-hidden shadow-2xl cursor-pointer border border-[#C9A982]/20 group-hover:border-[#C9A982]/60 transition-colors duration-500">
+                  class="relative w-full sm:w-80 max-h-[340px] sm:max-h-none aspect-[16/10] sm:aspect-[9/16] rounded-2xl overflow-hidden shadow-2xl cursor-pointer border border-[#C9A982]/20 group-hover:border-[#C9A982]/60 transition-colors duration-500">
                   <img 
                     [src]="col.bannerImage" 
                     [alt]="col.title" 

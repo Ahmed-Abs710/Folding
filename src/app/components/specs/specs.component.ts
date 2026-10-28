@@ -29,7 +29,7 @@ import { CommonModule } from '@angular/common';
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         
         <!-- Spec 1 -->
-        <div class="atelier-card p-8 rounded-2xl space-y-4">
+        <div class="atelier-card p-6 sm:p-8 rounded-2xl space-y-3 sm:space-y-4">
           <div class="w-12 h-12 rounded-xl bg-[#C9A982]/10 border border-[#C9A982]/30 flex items-center justify-center text-[#C9A982] font-display text-lg">
             01
           </div>
@@ -83,7 +83,7 @@ import { CommonModule } from '@angular/common';
             <p class="text-xs text-white/50">توريد وتصنيع معتمد وفق الكود الهندسي الأوروبي والمصري.</p>
           </div>
         </div>
-        <div class="flex flex-wrap items-center gap-6 text-xs text-white/60 font-semibold tracking-widest uppercase">
+        <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 sm:gap-6 text-xs text-white/60 font-semibold tracking-widest uppercase">
           <span class="text-white hover:text-[#C9A982] transition">ALUMIL</span>
           <span class="text-white/20">•</span>
           <span class="text-white hover:text-[#C9A982] transition">SCHÜCO</span>

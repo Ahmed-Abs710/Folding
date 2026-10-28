@@ -25,4 +25,26 @@
 
   <!-- Footer -->
   <app-footer></app-footer>
+  <!-- Floating Mobile Quick Action Bar (Visible only on mobile screens) -->
+  <aside class="fixed bottom-3 inset-x-3 z-40 sm:hidden">
+    <div class="bg-[#151413]/95 backdrop-blur-xl border border-[#C9A982]/35 rounded-2xl p-2 shadow-[0_10px_35px_rgba(0,0,0,0.85)] flex items-center justify-between gap-2">
+      <!-- Call Button -->
+      <a href="tel:+201000000000" class="flex-1 py-2.5 px-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-[#F8F5F1] text-[11px] font-bold flex items-center justify-center gap-1.5 transition">
+        <span>📞</span>
+        <span>اتصال</span>
+      </a>
+
+      <!-- WhatsApp Button -->
+      <a href="https://wa.me/201000000000" target="_blank" class="flex-1 py-2.5 px-2 rounded-xl bg-[#25D366]/15 hover:bg-[#25D366]/25 border border-[#25D366]/35 text-[#25D366] text-[11px] font-bold flex items-center justify-center gap-1.5 transition">
+        <span>💬</span>
+        <span>واتساب</span>
+      </a>
+
+      <!-- 3D Quote / Estimate Button -->
+      <a href="#calculator" class="flex-1 py-2.5 px-2 rounded-xl champagne-btn text-[11px] font-bold flex items-center justify-center gap-1 shadow-md">
+        <span>حاسبة التكلفة</span>
+        <span>↗</span>
+      </a>
+    </div>
+  </aside>
 </div>
